@@ -16,23 +16,24 @@
   <meta name="author" content="huangsnw">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="最近在学习kubernates，我就想弄一台电脑来学习，正好公司发的电脑在角落吃灰，就准备把它刷成Linux系统。 准备的镜像是Manjaro。 以前也体验过Gnome、i3等版本，都挺好用的。光从外观来说，这是我见过最美观的Linux桌面了。    下面开始安装  从官网下载iSO镜像，使用balenaEtcher将镜像写进U盘里，准备完毕。 然后使用U盘启动，进入桌面后按照提示安装，相比于我在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/01/11/hello-world/index.html">
+<meta property="og:title" content="manjaro kde">
+<meta property="og:url" content="http://example.com/2022/05/17/manjaro%20kde/index.html">
 <meta property="og:site_name" content="HuangSnw">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="最近在学习kubernates，我就想弄一台电脑来学习，正好公司发的电脑在角落吃灰，就准备把它刷成Linux系统。 准备的镜像是Manjaro。 以前也体验过Gnome、i3等版本，都挺好用的。光从外观来说，这是我见过最美观的Linux桌面了。    下面开始安装  从官网下载iSO镜像，使用balenaEtcher将镜像写进U盘里，准备完毕。 然后使用U盘启动，进入桌面后按照提示安装，相比于我在">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-01T05:29:43.794Z">
+<meta property="article:published_time" content="2022-05-17T01:50:12.000Z">
+<meta property="article:modified_time" content="2022-07-06T05:04:34.092Z">
 <meta property="article:author" content="huangsnw">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hello World - HuangSnw</title>
+  <title>manjaro kde - HuangSnw</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -178,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="manjaro kde"></span>
           
         </div>
 
@@ -194,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 words
+          472 words
         
       </span>
     
@@ -243,24 +244,36 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">manjaro kde</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <p>最近在学习kubernates，我就想弄一台电脑来学习，正好公司发的电脑在角落吃灰，就准备把它刷成Linux系统。</p>
+<p>准备的镜像是<a target="_blank" rel="noopener" href="https://manjaro.org/download/">Manjaro</a>。</p>
+<p>以前也体验过Gnome、i3等版本，都挺好用的。光从外观来说，这是我见过最美观的Linux桌面了。</p>
+<blockquote>
+<p>  下面开始安装</p>
+</blockquote>
+<p>从官网下载iSO镜像，使用balenaEtcher将镜像写进U盘里，准备完毕。</p>
+<p>然后使用U盘启动，进入桌面后按照提示安装，相比于我在虚拟机安装CentOS这简单不少。</p>
+<p>安装完重启就进入了桌面。</p>
+<p>kde版本的桌面是仿windows的，看着熟悉，操作起来也很顺滑。相比于i3，kde版本没有中文乱码的问题，可以直接开始其他的配置了。</p>
+<p><strong>换源</strong>：</p>
+<p>manjaro使用的是pacman作为包管理器。我们作为大陆玩家，需要给她换个源。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman-mirrors -i -c China -m rank<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>在列表中选择一个时延最短的就行了，我选了清华的源。</p>
+<p><strong>更新系统：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -Syy<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p><strong>AUR助手yay</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S yay<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p><strong>安装搜狗输入法：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">```<br><br>**安装docker：**<br><br>```bash<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>​	</p>
 
                 
               </div>
@@ -269,6 +282,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/manjaro/" class="category-chain-item">manjaro</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/linux/">#linux</a>
+      
+    </div>
   
 </div>
 
@@ -280,15 +321,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/19/%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/" title="单点登录">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">单点登录</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/05/01/webhook/" title="github webhook">
+                        <span class="hidden-mobile">github webhook</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
