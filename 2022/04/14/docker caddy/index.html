@@ -24,7 +24,7 @@
 <meta property="og:description" content="使用docker部署caddy今天将服务器的系统从Debian换回了CentOS，果然还是CentOS用的习惯一点。 相比于我本地直接用brew安装我需要的应用，在CentOS上安装brew就不是很方便了。于是我就打算使用docker部署caddy。 先下载镜像： 1docker pull caddy@latest  准备环境： 我使用Caddyfile配置caddy，需要准备一个容器数据卷。我在">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-14T01:50:12.000Z">
-<meta property="article:modified_time" content="2022-07-04T06:28:32.533Z">
+<meta property="article:modified_time" content="2022-07-06T07:51:58.419Z">
 <meta property="article:author" content="huangsnw">
 <meta property="article:tag" content="caddy">
 <meta name="twitter:card" content="summary_large_image">
@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          608 words
+          624 words
         
       </span>
     
@@ -257,7 +257,7 @@
 <p>准备环境：</p>
 <p>我使用Caddyfile配置caddy，需要准备一个容器数据卷。我在<code>/opt/caddy</code>目录下创建了<code>Caddyfile</code>和<code>file</code>文件夹。</p>
 <p>从官网了解到，在caddy的容器内部，Dockerfile是放在&#96;&#96;&#x2F;etc&#x2F;caddy&#96;目录下，于是所有都准备妥当。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker run -it -d \<br>-v /opt/caddy:/etc/caddy \<br>--privileged=<span class="hljs-literal">true</span> \<br>--name=<span class="hljs-string">&quot;caddy&quot;</span> \<br>-p 8090:8090 -p 8091:8091 -p 8092:8092 -p 8093:8093 -p 8094:8094 -p 8095:8095 \ e63f36e9049f<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ docker run -it -d \<br>-v /opt/caddy:/etc/caddy \<br>--privileged=<span class="hljs-literal">true</span> \<br>--name=<span class="hljs-string">&quot;caddy&quot;</span> \<br>-p 80:80 -p 443:443 -p 8090:8090 -p 8091:8091 -p 8092:8092 -p 8093:8093 -p 8094:8094 -p 8095:8095 \ e63f36e9049f<br><br></code></pre></td></tr></table></figure>
 
 
 
