@@ -16,12 +16,12 @@
   <meta name="author" content="huangsnw">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. Kubernetes介绍1.1 应用部署方式演变在部署应用程序的方式上，主要经历了三个时代：  传统部署：互联网早期，会直接将应用程序部署在物理机上  优点：简单，不需要其它技术的参与 缺点：不能为应用程序定义资源使用边界，很难合理地分配计算资源，而且程序之间容易产生影响   虚拟化部署：可以在一台物理机上运行多个虚拟机，每个虚拟机都是独立的一个环境  优点：程序环境不会相互产生影响，提供了">
+    <meta name="description" content="转载自Bilibili Kubernetes视频下方评论区大佬@冰糖没糖的笔记。  1. Kubernetes介绍1.1 应用部署方式演变在部署应用程序的方式上，主要经历了三个时代：  传统部署：互联网早期，会直接将应用程序部署在物理机上  优点：简单，不需要其它技术的参与 缺点：不能为应用程序定义资源使用边界，很难合理地分配计算资源，而且程序之间容易产生影响   虚拟化部署：可以在一台物理机上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go GC">
+<meta property="og:title" content="Kubernetes笔记">
 <meta property="og:url" content="http://example.com/2022/07/18/Kubernetes/index.html">
 <meta property="og:site_name" content="HuangSnw">
-<meta property="og:description" content="1. Kubernetes介绍1.1 应用部署方式演变在部署应用程序的方式上，主要经历了三个时代：  传统部署：互联网早期，会直接将应用程序部署在物理机上  优点：简单，不需要其它技术的参与 缺点：不能为应用程序定义资源使用边界，很难合理地分配计算资源，而且程序之间容易产生影响   虚拟化部署：可以在一台物理机上运行多个虚拟机，每个虚拟机都是独立的一个环境  优点：程序环境不会相互产生影响，提供了">
+<meta property="og:description" content="转载自Bilibili Kubernetes视频下方评论区大佬@冰糖没糖的笔记。  1. Kubernetes介绍1.1 应用部署方式演变在部署应用程序的方式上，主要经历了三个时代：  传统部署：互联网早期，会直接将应用程序部署在物理机上  优点：简单，不需要其它技术的参与 缺点：不能为应用程序定义资源使用边界，很难合理地分配计算资源，而且程序之间容易产生影响   虚拟化部署：可以在一台物理机上">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/huangsnw/pictureBed/main/img/image-20200505183738289.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/huangsnw/pictureBed/main/img/image-20200524150339551.png">
@@ -80,9 +80,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/huangsnw/pictureBed/main/img/image-20200520163552110.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/huangsnw/pictureBed/main/img/image-20200520163832827.png">
 <meta property="article:published_time" content="2022-07-18T01:50:12.000Z">
-<meta property="article:modified_time" content="2022-07-19T08:29:17.976Z">
+<meta property="article:modified_time" content="2022-07-19T08:55:00.399Z">
 <meta property="article:author" content="huangsnw">
-<meta property="article:tag" content="gc">
+<meta property="article:tag" content="k8s">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/huangsnw/pictureBed/main/img/image-20200505183738289.png">
   
@@ -90,7 +90,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Go GC - HuangSnw</title>
+  <title>Kubernetes笔记 - HuangSnw</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,7 +248,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Go GC"></span>
+            <span id="subtitle" data-typed-text="Kubernetes笔记"></span>
           
         </div>
 
@@ -313,12 +313,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Go GC</h1>
+            <h1 style="display: none">Kubernetes笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-Kubernetes介绍"><a href="#1-Kubernetes介绍" class="headerlink" title="1. Kubernetes介绍"></a>1. Kubernetes介绍</h1><h2 id="1-1-应用部署方式演变"><a href="#1-1-应用部署方式演变" class="headerlink" title="1.1 应用部署方式演变"></a>1.1 应用部署方式演变</h2><p>在部署应用程序的方式上，主要经历了三个时代：</p>
+                <blockquote>
+<p>转载自<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Qv41167ck?p=20&vd_source=f7d8ef7ac1da07bb9c6df3594d4c0a5d">Bilibili Kubernetes</a>视频下方评论区大佬<a target="_blank" rel="noopener" href="https://space.bilibili.com/91817852">@冰糖没糖</a>的笔记。</p>
+</blockquote>
+<h1 id="1-Kubernetes介绍"><a href="#1-Kubernetes介绍" class="headerlink" title="1. Kubernetes介绍"></a>1. Kubernetes介绍</h1><h2 id="1-1-应用部署方式演变"><a href="#1-1-应用部署方式演变" class="headerlink" title="1.1 应用部署方式演变"></a>1.1 应用部署方式演变</h2><p>在部署应用程序的方式上，主要经历了三个时代：</p>
 <ul>
 <li><p><strong>传统部署</strong>：互联网早期，会直接将应用程序部署在物理机上</p>
 <blockquote>
@@ -2136,7 +2139,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/go/" class="category-chain-item">go</a>
+  <a href="/categories/Kubernetes/" class="category-chain-item">Kubernetes</a>
   
   
 
@@ -2151,7 +2154,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/gc/">#gc</a>
+        <a href="/tags/k8s/">#k8s</a>
       
     </div>
   
@@ -2165,18 +2168,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/18/go%20GC/" title="Go GC">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Go GC</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/17/manjaro%20kde/" title="manjaro kde">
-                        <span class="hidden-mobile">manjaro kde</span>
+                      <a href="/2022/07/18/go%20GC/" title="Go GC">
+                        <span class="hidden-mobile">Go GC</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
